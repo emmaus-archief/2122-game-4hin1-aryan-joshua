@@ -13,6 +13,10 @@
 const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
+const UITLEG = 0;
+
+
+
 
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
@@ -26,6 +30,10 @@ var spelerY = 600; // y-positie van speler
  */
 var beweegAlles = function () {
   // speler
+  const KEY_DOWN = 83
+const KEY_UP = 87
+const KEY_LEFT = 65
+const KEY_RIGHT = 68
 
   // vijand
 
