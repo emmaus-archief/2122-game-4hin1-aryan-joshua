@@ -68,7 +68,7 @@ var tekenAlles = function () {
   fill("white");
   rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("black");
-  ellipse(spelerX, spelerY, 10, 10);
+  ellipse(spelerX, spelerY, 15, 15);
 
   // punten en health
 
@@ -97,7 +97,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+  background('black');
 }
 
 /**

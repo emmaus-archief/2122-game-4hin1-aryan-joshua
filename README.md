@@ -6,7 +6,7 @@ Gemaakt door:
 - *aryan 2*
 
 ### Beschrijving
-*korte beschrijving van het spel, wat je kunt doen in het spel, wat het doel is*
+*een soort snakes je heb een bepaalt tijdlimiet en door munten op te pakken blijf je in leven*
 
 ## Mijn planning
 Werk de planning af van boven naar beneden<br>
