@@ -2,11 +2,11 @@ Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 
 ## Mijn spel: *naam van het spel*
 Gemaakt door:
-- *joshua 1*
-- *aryan 2*
+- *joshua sedney*
+- *aryan Ramdaras*
 
 ### Beschrijving
-*een soort snakes je heb een bepaalt tijdlimiet en door munten op te pakken blijf je in leven*
+*een soort snakes je heb een bepaalt tijdlimiet en door munten op te pakken kan je door naar het volgende level, er zijn obstakels die ervoor zorgen dat munten pakken moeilijk wordt*
 
 ## Mijn planning
 Werk de planning af van boven naar beneden<br>
