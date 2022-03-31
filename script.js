@@ -35,6 +35,38 @@ const KEY_UP = 87
 const KEY_LEFT = 65
 const KEY_RIGHT = 68
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   // vijand
 
   // kogel
