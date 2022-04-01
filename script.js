@@ -34,7 +34,20 @@ var beweegAlles = function () {
 const KEY_UP = 87
 const KEY_LEFT = 65
 const KEY_RIGHT = 68
-
+const SPELEN = 1
+  {if (KEY_LEFT)
+    spelerX=spelerX-1
+  }
+  {if (KEY_RIGHT)
+   spelerX=spelerX+1
+  }
+  {if (KEY_UP)
+    spelerY=spelerY+1
+  }
+  {if (KEY_DOWN)
+  spelerY=spelerY-1
+  }
+  
 
 
 
