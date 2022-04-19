@@ -37,51 +37,18 @@ const KEY_UP = 87
 const KEY_LEFT = 65
 const KEY_RIGHT = 68
 const SPELEN = 1
-  {if (KEY_LEFT)
+  {if (keyIsDown(65))
     spelerX=spelerX-1
   }
-  {if (KEY_RIGHT)
+  {if (keyIsDown(68))
    spelerX=spelerX+1
   }
-  {if (KEY_UP)
+  {if (keyIsDown(87))
     spelerY=spelerY+1
   }
-  {if (KEY_DOWN)
+  {if (keyIsDown(83))
   spelerY=spelerY-1
   }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
   // vijand
 
   // kogel
@@ -174,3 +141,36 @@ function draw() {
 
   }
 }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
