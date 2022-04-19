@@ -29,22 +29,22 @@ var vijandY = 600
  */
 var beweegAlles = function () {
   // speler
-  const KEY_DOWN = 83
-  const KEY_UP = 87
-  const KEY_LEFT = 65
-  const KEY_RIGHT = 68
+  const KEY_DOWN = 40
+  const KEY_UP = 38
+  const KEY_LEFT = 37
+  const KEY_RIGHT = 39
   const SPELEN = 1
-  if (KEY_LEFT) {
+  if (keyIsDown(37)) {
     spelerX=spelerX-1
   }
-  if (KEY_RIGHT) {
+  if (keyIsDown(39)) {
    spelerX=spelerX+1
   }
-  if (KEY_UP) {
-    spelerY=spelerY+1
+  if (keyIsDown(38)) {
+    spelerY=spelerY-1
   }
-  if (KEY_DOWN) {
-  spelerY=spelerY-1
+  if (keyIsDown(40)) {
+  spelerY=spelerY+1
   }
   
   // vijand
@@ -116,7 +116,8 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('black');
+  
+  background("black");
 }
 
 /**
