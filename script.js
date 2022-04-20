@@ -75,7 +75,8 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-fill("green")
+   fill("black")
+   rect(0, 0, 1280, 720);
   // vijand
   fill("red");
   rect (vijandX - 25, vijandY - 25, 50, 50 );
