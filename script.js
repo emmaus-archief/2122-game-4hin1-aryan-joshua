@@ -80,7 +80,7 @@ fill("green")
   fill("red");
   rect (vijandX - 25, vijandY - 25, 50, 50 );
   fill("black");
-rect(vijandX, vijandY, 10, 10);
+ellipse(vijandX, vijandY, 10, 10);
   // kogel
 
   // speler
