@@ -59,10 +59,10 @@ var beweegAlles = function () {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-  if (spelerX - vijandX < 50 && 
-      spelerY -vijandY > -50 &&
-      spelerY - vijandY < 50 &&
-      spelerX - vijandX > -50 ) {
+  if (spelerX - vijandX < 51 && 
+      spelerY -vijandY > -51 &&
+      spelerY - vijandY < 51 &&
+      spelerX - vijandX > -51 ) {
       console.log("botsing");
   }
   // botsing kogel tegen vijand
