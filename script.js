@@ -64,6 +64,7 @@ var verwerkBotsing = function () {
       spelerY - vijandY < 51 &&
       spelerX - vijandX > -51 ) {
       console.log("botsing");
+    spelStatus = GAMEOVER;
   }
   // botsing kogel tegen vijand
 
@@ -130,14 +131,12 @@ function setup() {
 function draw() {
   if (spelStatus === SPELEN) {
     beweegAlles();
-    verwerkBotsing();
+    verwerkBotsing(); // checkt ook gameover
     tekenAlles();
-    if (checkGameOver()) {
-      spelStatus = GAMEOVER;
-    }
+    
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
-
+ 
   }
 };
