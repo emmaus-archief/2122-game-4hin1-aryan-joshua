@@ -137,6 +137,7 @@ function draw() {
     verwerkBotsing(); // checkt ook gameover
     tekenAlles();
     
+    
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
@@ -144,6 +145,11 @@ function draw() {
     text("druk op reload", 100, 100);
     if (keyIsDown(13)) { // enter
          text("daar gaan we weer", 100, 300);
+      text("druk op spatie", 200,200 );
+    }
+      if (keyIsDown(32)){ //spatie
+      spelStatus = SPELEN;
+      spelerX = 200
       }
   }
 };
