@@ -20,6 +20,8 @@ var spelerY = 600; // y-positie van speler
 
 var vijandX =800;
 var vijandY = 600
+
+var coin = 200
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -50,6 +52,7 @@ var beweegAlles = function () {
   // vijand
 
   // kogel
+  
 };
 
 /**
@@ -137,6 +140,10 @@ function draw() {
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
- 
+    fill("white")
+    text("druk op reload", 100, 100);
+    if (keyIsDown(13)) { // enter
+         text("daar gaan we weer", 100, 300);
+      }
   }
 };
