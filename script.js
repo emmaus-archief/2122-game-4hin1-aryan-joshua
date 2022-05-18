@@ -90,7 +90,7 @@ ellipse(vijandX, vijandY, 10, 10);
   // kogel
 
   // speler
-  fill("white");
+  fill("green");
   rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("black");
   ellipse(spelerX, spelerY, 15, 15);
@@ -141,10 +141,14 @@ function draw() {
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
+    background("red");
     fill("white")
-    text("druk op reload", 100, 100);
-    if (keyIsDown(13)) { // enter
-         text("daar gaan we weer", 100, 300);
+    textSize(100);
+    text("press enter", 100, 100);
+    
+    if (keyIsDown(13)) { // enter 
+
+      ellipse(500,400,150,150);// face
       text("druk op spatie", 200,200 );
     }
       if (keyIsDown(32)){ //spatie
