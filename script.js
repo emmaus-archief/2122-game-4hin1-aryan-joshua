@@ -9,6 +9,10 @@
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
+ 
+
+
+
 
 const SPELEN = 1;
 const GAMEOVER = 2;
@@ -20,6 +24,8 @@ var spelerY = 600; // y-positie van speler
 
 var vijandX =800;
 var vijandY = 600
+
+var img; // plaatje
 
 var coin = 200
 /* ********************************************* */
@@ -86,7 +92,9 @@ var tekenAlles = function () {
   fill("red");
   rect (vijandX - 25, vijandY - 25, 50, 50 );
   fill("black");
-ellipse(vijandX, vijandY, 10, 10);
+  ellipse(vijandX, vijandY, 10, 10);
+   image(img,vijandX-25,vijandY-25,50,50)
+  
   // kogel
 
   // speler
@@ -111,7 +119,9 @@ var checkGameOver = function () {
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
-
+function preload() {
+  img = loadImage('virus.png')
+}
 /**
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
@@ -143,13 +153,27 @@ function draw() {
     // teken game-over scherm
     background("red");
     fill("white")
-    textSize(100);
-    text("press enter", 100, 100);
+    textSize(100)
+    text("game over", 400, 100);
+    textSize(20)
+    text("press enter",400,150);
     
     if (keyIsDown(13)) { // enter 
+      
+    ellipse(202, 208, 300, 300); // face 
+      
+    fill(46, 46, 41);
+    ellipse(157, 151, 40, 40); // left eye
+    ellipse(304, 142, 40, 40); // right eye
 
-      ellipse(500,400,150,150);// face
-      text("druk op spatie", 200,200 );
+    
+    fill(252, 65, 65);
+    ellipse(257, 240, 120, 136); // mouth
+
+      
+      textSize(100)
+      fill(200,200,200);
+      text("druk op spatie",350, 700 );
     }
       if (keyIsDown(32)){ //spatie
       spelStatus = SPELEN;
