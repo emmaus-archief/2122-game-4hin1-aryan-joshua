@@ -40,6 +40,7 @@ var img; // plaatje
  */
 var beweegAlles = function () {
   // speler
+ 
   const KEY_DOWN = 40
   const KEY_UP = 38
   const KEY_LEFT = 37
@@ -193,7 +194,7 @@ function draw() {
     }
       if (keyIsDown(32)){ //spatie
       spelStatus = SPELEN;
-      
+        health = 1
       }
   }
 };
