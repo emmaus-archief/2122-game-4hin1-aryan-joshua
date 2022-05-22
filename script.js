@@ -24,10 +24,13 @@ var spelerY = 600; // y-positie van speler
 
 var vijandX =800;
 var vijandY = 600
-
+var health = 5
+var smileyX = 202
+var smileyY = 208
 var img; // plaatje
 
-var coin = 200
+
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -71,14 +74,27 @@ var verwerkBotsing = function () {
   if (spelerX - vijandX < 51 && 
       spelerY -vijandY > -51 &&
       spelerY - vijandY < 51 &&
-      spelerX - vijandX > -51 ) {
-      console.log("botsing");
-    spelStatus = GAMEOVER;
-  }
+      spelerX - vijandX > -51 ) { 
+      console.log("botsing");     
+      }     
+   
+  
   // botsing kogel tegen vijand
 
   // update punten en health
 
+  if (spelerX - vijandX < 51 && 
+      spelerY -vijandY > -51 &&
+      spelerY - vijandY < 51 &&
+      spelerX - vijandX > -51 ) {
+      spelerX = 200
+      spelerY =200
+      health = health - 1
+  };
+    
+  if (health === 0){
+  spelStatus = GAMEOVER;
+  };  
 };
 
 /**
@@ -160,11 +176,11 @@ function draw() {
     
     if (keyIsDown(13)) { // enter 
       
-    ellipse(202, 208, 300, 300); // face 
-      
+    ellipse(smileyX, smileyY, 300, 300); // face 
+     
     fill(46, 46, 41);
-    ellipse(157, 151, 40, 40); // left eye
-    ellipse(304, 142, 40, 40); // right eye
+    ellipse(smileyX - 45, smileyY - 57, 40, 40); // left eye
+    ellipse(smileyX + 102, smileyY - 66, 40, 40); // right eye
 
     
     fill(252, 65, 65);
@@ -177,7 +193,7 @@ function draw() {
     }
       if (keyIsDown(32)){ //spatie
       spelStatus = SPELEN;
-      spelerX = 200
+      
       }
   }
 };
