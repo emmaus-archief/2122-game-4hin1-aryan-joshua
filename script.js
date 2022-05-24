@@ -91,7 +91,7 @@ var verwerkBotsing = function () {
       spelerY - vijandY < 51 &&
       spelerX - vijandX > -51 ) {
       spelerX = random(200,900);
-      spelerY = random(100,500);
+      spelerY = random(200,500);
       health = health - 1
   };
     
