@@ -28,6 +28,7 @@ var health = 5
 var smileyX = 202
 var smileyY = 208
 var img; // plaatje
+var coin
 
 
 
@@ -62,6 +63,7 @@ var beweegAlles = function () {
   // vijand
 
   // kogel
+  coin
   
 };
 
@@ -88,8 +90,8 @@ var verwerkBotsing = function () {
       spelerY -vijandY > -51 &&
       spelerY - vijandY < 51 &&
       spelerX - vijandX > -51 ) {
-      spelerX = 200
-      spelerY =200
+      spelerX = random(200,900);
+      spelerY = random(100,500);
       health = health - 1
   };
     
@@ -121,7 +123,9 @@ var tekenAlles = function () {
   ellipse(spelerX, spelerY, 15, 15);
 
   // punten en health
-
+    fill("white")
+    textSize(100);
+    text("health = " + health, 400, 100);
 };
 
 /**
@@ -150,7 +154,7 @@ function setup() {
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
   
-  background("black");
+  background("white");
 }
 
 /**
@@ -194,7 +198,7 @@ function draw() {
     }
       if (keyIsDown(32)){ //spatie
       spelStatus = SPELEN;
-        health = 1
+        health = 2
       }
   }
 };
