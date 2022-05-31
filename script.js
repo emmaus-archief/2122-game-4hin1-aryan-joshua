@@ -1,4 +1,4 @@
-/* Game opdracht
+ /* Game opdracht
    Informatica - Emmauscollege Rotterdam
    Template voor een game in JavaScript met de p5 library
 
@@ -167,9 +167,11 @@ function draw() {
     beweegAlles();
     verwerkBotsing(); // checkt ook gameover
     tekenAlles();
-    
+    console.log("spelen")
     
   }
+
+  
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
     background("red");
@@ -195,10 +197,22 @@ function draw() {
       textSize(100)
       fill(200,200,200);
       text("druk op spatie",350, 700 );
+      
+      spelStatus = UITLEG;
     }
+  }
       if (keyIsDown(32)){ //spatie
       spelStatus = SPELEN;
         health = 2
+        console.log("spelen")
       }
+  if (spelStatus === UITLEG){
+    background("red");
+    fill("white")
+    textSize(100)
+    text("welkom", 400, 100);
+    textSize(20)
+    text("press spatie",400,150);
+    console.log("uitleg")
   }
 };
