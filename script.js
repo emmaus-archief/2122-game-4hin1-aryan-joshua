@@ -29,7 +29,7 @@ var smileyX = 202
 var smileyY = 208
 var img; // plaatje
 var coin = 500
-var points = 10
+var points 
 
 
 /* ********************************************* */
@@ -127,10 +127,7 @@ var tekenAlles = function () {
     textSize(100);
     text("health = " + health, 400, 100);
 };
-fill("white")
-    textSize(90);
-    text("points =" + points, 500, 100);
-};
+
 
 /**
  * return true als het gameover is
