@@ -28,8 +28,7 @@ var health = 5
 var smileyX = 202
 var smileyY = 208
 var img; // plaatje
-var coin = 500
-var points 
+ 
 
 
 /* ********************************************* */
@@ -61,9 +60,14 @@ var beweegAlles = function () {
   }
   
   // vijand
-
+ vijandY=800
+var speed = 2
+  if (vijandY > 850) {
+    speed = -2;
+  }
+  vijandY= vijandY + speed;
   // kogel
-  coin
+ 
   
 };
 
@@ -217,8 +221,4 @@ function draw() {
     console.log("uitleg")
   }
 };
- if (spelerX - coin < 51 && 
-      spelerY - coin > -51 &&
-      spelerY - coin < 51 &&
-      spelerX - coin > -51 )
-   console.log(+punt)
+ 
