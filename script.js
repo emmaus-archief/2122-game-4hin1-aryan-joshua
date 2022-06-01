@@ -28,8 +28,8 @@ var health = 5
 var smileyX = 202
 var smileyY = 208
 var img; // plaatje
-var coin
-
+var coin = 500
+var points = 10
 
 
 /* ********************************************* */
@@ -127,6 +127,10 @@ var tekenAlles = function () {
     textSize(100);
     text("health = " + health, 400, 100);
 };
+fill("white")
+    textSize(90);
+    text("points =" + points, 500, 100);
+};
 
 /**
  * return true als het gameover is
@@ -141,7 +145,7 @@ var checkGameOver = function () {
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
 function preload() {
-  img = loadImage('virus.png')
+  img = loadImage('virus.png');
 }
 /**
  * setup
@@ -216,3 +220,8 @@ function draw() {
     console.log("uitleg")
   }
 };
+ if (spelerX - coin < 51 && 
+      spelerY - coin > -51 &&
+      spelerY - coin < 51 &&
+      spelerX - coin > -51 )
+   console.log(+punt)
