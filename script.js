@@ -16,8 +16,10 @@
 
 const SPELEN = 1;
 const GAMEOVER = 2;
+const GAMEOVER2 = 3;
 var spelStatus = SPELEN;
-const UITLEG = 0;
+const UITLEG = 4;
+
 
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
@@ -194,6 +196,13 @@ function draw() {
       }
   }
   if (spelStatus === GAMEOVER2) {
+    background("red");
+    fill("white")
+    textSize(100)
+    text("game over", 400, 100);
+    textSize(20)
+    text("press enter",400,150);
+    
     ellipse(smileyX, smileyY, 300, 300); // face 
      
     fill(46, 46, 41);
