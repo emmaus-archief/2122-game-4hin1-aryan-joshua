@@ -14,11 +14,12 @@
 
 
 
-const SPELEN = 1;
-const GAMEOVER = 2;
-const GAMEOVER2 = 3;
+const SPELEN = 3;
+const GAMEOVER = 4;
+const GAMEOVER2 = 5;
 var spelStatus = SPELEN;
-const UITLEG = 4;
+const UITLEG = 2;
+const START = 1;
 
 
 var spelerX = 600; // x-positie van speler
@@ -233,19 +234,19 @@ function draw() {
     text("druk op spatie",350, 700 );
   
    if (keyIsDown(32)){ //spatie
-      spelStatus = UITLEG;
+      spelStatus = START;
       health = 2
       console.log("spelen")
       }
   }
-  if (spelStatus === UITLEG){
+  if (spelStatus === START){
     background("red");
     fill("white")
     textSize(100)
-    text("welkom", 400, 100);
+    text("welkom", 400, 100);  
     textSize(20)
-    text("press enter",400,150);
-    console.log("uitleg")
+    text("druk op enter om te beginnen",400,150);
+    console.log("startscherm")
     toetsIngedrutkVorige = toetsIngedruktNu;
     if (keyIsDown(13)) {
       toetsIngedruktNu = true;
