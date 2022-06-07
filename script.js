@@ -145,8 +145,8 @@ var tekenAlles = function () {
   // punten en health
     fill("white")
     textSize(90);
-    text("health = " + health, 400, 100);
-    text("points =" + points, 500, 100);
+    text("health = " + health, 200, 100);
+    text("points =" + points, 700, 100);
 };
 
 /**
