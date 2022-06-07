@@ -68,9 +68,14 @@ var beweegAlles = function () {
   // vijand
    vijandY=600;
   var speed = 5;
-  vijandY = vijandY + speed;
+  
   var tekenAlles = function () {
- 
+ if (vijandY > 800) {
+    speed = -5;
+  }
+    if (y<800) {
+      speed = 5;
+    }
    fill("black")
    rect(0, 0, 1280, 720);
   
@@ -80,13 +85,14 @@ var beweegAlles = function () {
   ellipse(vijandX, vijandY, 10, 10);
    image(img,vijandX-25,vijandY-25,50,50);
   }
-  if (vijandY > 800) {
-    speed = -5;
-  }
+  vijandY = vijandY + speed;
+};
+  
+  
   // kogel
   
   
-};
+
 
 /**
  * Checkt botsingen
