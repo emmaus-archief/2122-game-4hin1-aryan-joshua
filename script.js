@@ -32,9 +32,10 @@ var speedX = 5;
 var health = 5;
 var smileyX = 202;
 var smileyY = 208;
-var img; // plaatje
-var coin = 500;
-var points = 10;
+var img;// plaatje
+var coinX = 500;
+var coinY = 500;
+var points = 0;
 var toetsIngedruktNu = false;
 var toetsIngedruktVorige = false;
 
@@ -149,8 +150,27 @@ var tekenAlles = function () {
     textSize(90);
     text("health = " + health, 200, 100);
     text("points =" + points, 700, 100);
-};
 
+fill("red");
+  rect (coinX - 25, coinY - 25, 50, 50 );
+  fill("black");
+  ellipse(coinX, coinY, 10, 10);
+ 
+  if (spelerX - coinX < 51 && 
+      spelerY -coinY > -51 &&
+      spelerY - coinY < 51 &&
+      spelerX - coinX > -51 ) {
+     spelerX = random(200,900);
+      spelerY = random(200,500); 
+    points = points + 1
+      }
+   if (spelStatus===GAMEOVER) {
+     points = 1
+   }
+  if (spelStatus===GAMEOVER2) {
+    points = 1
+  }
+};
 /**
  * return true als het gameover is
  * anders return false
@@ -166,6 +186,7 @@ var checkGameOver = function () {
 function preload() {
   img = loadImage('virus.png');
 }
+
 /**
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
