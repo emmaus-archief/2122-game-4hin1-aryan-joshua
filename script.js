@@ -27,12 +27,14 @@ var spelerY = 600; // y-positie van speler
 
 var vijandX =800;
 var vijandY = 600
-var health = 5
-var smileyX = 202
-var smileyY = 208
+var speedY = 5;
+var speedX = 5;
+var health = 5;
+var smileyX = 202;
+var smileyY = 208;
 var img; // plaatje
-var coin = 500
-var points = 10
+var coin = 500;
+var points = 10;
 var toetsIngedruktNu = false;
 var toetsIngedruktVorige = false;
 
@@ -66,26 +68,18 @@ var beweegAlles = function () {
   }
   
   // vijand
-   vijandY=600;
-  var speed = 5;
-  
-  var tekenAlles = function () {
- if (vijandY > 800) {
-    speed = -5;
+
+  vijandY = vijandY  + speedY
+if (vijandY > 700 &&
+   vijandX > 200) {
+    speedY = -5;
+    speedX = -5;
   }
-    if (y<800) {
-      speed = 5;
+    if (vijandY<0) {
+      speedY = 5;
+      speedX = 5;
     }
-   fill("black")
-   rect(0, 0, 1280, 720);
-  
-  fill("red");
-  rect (vijandX - 25, vijandY - 25, 50, 50 );
-  fill("black");
-  ellipse(vijandX, vijandY, 10, 10);
-   image(img,vijandX-25,vijandY-25,50,50);
-  }
-  vijandY = vijandY + speed;
+
 };
   
   
@@ -120,6 +114,7 @@ var verwerkBotsing = function () {
       spelerX = random(200,900);
       spelerY = random(200,500);
       health = health - 1
+      points = points - 1
   };
     
   if (health === 0){
@@ -241,7 +236,8 @@ function draw() {
   
    if (keyIsDown(32)){ //spatie
       spelStatus = START;
-      health = 2
+      health = health + 1
+     points = points - 1
       console.log("spelen")
       }
   }
