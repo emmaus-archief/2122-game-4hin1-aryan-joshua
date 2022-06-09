@@ -34,7 +34,7 @@ var smileyX = 202;
 var smileyY = 208;
 var img;// plaatje
 var coinX = 500;
-var coinY = 500;
+var coinY = 600;
 var points = 0;
 var toetsIngedruktNu = false;
 var toetsIngedruktVorige = false;
@@ -160,10 +160,13 @@ fill("red");
       spelerY -coinY > -51 &&
       spelerY - coinY < 51 &&
       spelerX - coinX > -51 ) {
-     spelerX = random(200,900);
-      spelerY = random(200,500); 
+     coinX = random(200,900);
+      coinY = random(200,500); 
     points = points + 1
       }
+
+ 
+  
    if (spelStatus===GAMEOVER) {
      points = 1
    }
@@ -258,7 +261,6 @@ function draw() {
    if (keyIsDown(32)){ //spatie
       spelStatus = START;
       health = health + 1
-     points = points - 1
       console.log("spelen")
       }
   }
