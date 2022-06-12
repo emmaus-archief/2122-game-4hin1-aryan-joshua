@@ -13,22 +13,26 @@
 
 
 
-
+const UITLEG = 1;
+const START = 2;
 const SPELEN = 3;
 const GAMEOVER = 4;
 const GAMEOVER2 = 5;
 var spelStatus = SPELEN;
-const UITLEG = 2;
-const START = 1;
+
+
 
 
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
-var vijandX =800;
-var vijandY = 600
-var speedY = 5;
-var speedX = 5;
+var vijand1X =800;
+var vijand1Y = 600;
+var vijand2X = 200;
+var vijand2Y = 300;
+var speed2 = 5;
+var speed1 = 5;
+
 var health = 5;
 var smileyX = 202;
 var smileyY = 208;
@@ -69,18 +73,26 @@ var beweegAlles = function () {
   }
   
   // vijand
+  
+ 
 
-  vijandY = vijandY  + speedY
-if (vijandY > 700 &&
-   vijandX > 200) {
-    speedY = -5;
-    speedX = -5;
+ 
+  vijand1Y = vijand1Y  + speed1
+if (vijand1Y > 700) {
+    speed1 = -10;   
   }
-    if (vijandY<0) {
-      speedY = 5;
-      speedX = 5;
+    if (vijand1Y<100) {
+      speed1 = 10;
+      
     }
-
+  vijand2X = vijand2X  + speed2
+if (vijand2X > 1200){
+    speed2 = -10;
+  }
+    if (vijand2X<0) {
+      speed2 = 10;
+    }
+    
 };
   
   
@@ -96,10 +108,14 @@ if (vijandY > 700 &&
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-  if (spelerX - vijandX < 51 && 
-      spelerY -vijandY > -51 &&
-      spelerY - vijandY < 51 &&
-      spelerX - vijandX > -51 ) { 
+  if (spelerX - vijand2X < 51 && 
+      spelerY -vijand2Y > -51 &&
+      spelerY - vijand2Y < 51 &&
+      spelerX - vijand2X > -51 ) { 
+      spelerX = random(0,600);
+      spelerY = random(300,600);
+      health = health - 1
+    points = points -1
       console.log("botsing");     
       }     
    
@@ -108,10 +124,10 @@ var verwerkBotsing = function () {
 
   // update punten en health
 
-  if (spelerX - vijandX < 51 && 
-      spelerY -vijandY > -51 &&
-      spelerY - vijandY < 51 &&
-      spelerX - vijandX > -51 ) {
+  if (spelerX - vijand1X < 51 && 
+      spelerY -vijand1Y > -51 &&
+      spelerY - vijand1Y < 51 &&
+      spelerX - vijand1X > -51 ) {
       spelerX = random(200,900);
       spelerY = random(200,500);
       health = health - 1
@@ -131,11 +147,18 @@ var tekenAlles = function () {
    fill("black")
    rect(0, 0, 1280, 720);
   // vijand
+
   fill("red");
-  rect (vijandX - 25, vijandY - 25, 50, 50 );
+  rect (vijand1X - 25, vijand1Y - 25, 50, 50 );
   fill("black");
-  ellipse(vijandX, vijandY, 10, 10);
-   image(img,vijandX-25,vijandY-25,50,50)
+  ellipse(vijand1X, vijand1Y, 10, 10);
+   image(img,vijand1X-25,vijand1Y-25,50,50)
+
+   fill("red");
+  rect (vijand2X - 25, vijand2Y - 25, 50, 50 );
+  fill("black");
+  ellipse(vijand2X, vijand2Y, 10, 10);
+   image(img,vijand2X-25,vijand2Y-25,50,50)
   
   // kogel
 
